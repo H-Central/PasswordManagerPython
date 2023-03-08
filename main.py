@@ -1,5 +1,5 @@
 import json
-from helpers import *
+from helpers import manager, encode, gen
 
 def savePSW():
     with open('data.json', 'w') as file:
@@ -23,21 +23,11 @@ while True:
             # here need to dev
             pass
         case "2":
-            site = input("What is your website or application ?\n")
-            if list.get(site) != None:
-                print("This website is already here.")
-            else:
-                passwd = input("What password do you want ?\n")
-                list[site] = passwd
+            manager.addPSW()
         case "3":
-            see = input("What website or application you want to see the password\n")
-            if list.get(see) == None:
-                print("There are no password matching\n")
-            else:
-                print("Your password is:\n" + list.get(see))
+            manager.seePSW()
         case "4":
-            # here need to dev
-            pass
+            manager.delPSD()
         case "5":
             savePSW()
             print("See you later")
