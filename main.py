@@ -2,8 +2,6 @@ import json
 from helpers import manager, encode, gen
 from time import sleep
 
-with open('data.json', 'r') as file:
-    list = json.load(file)
 
 print("Welcome to your password manager.")
 print("It is your first time here ? (1 - no)(2 - yes)")
@@ -12,7 +10,6 @@ while True:
     match choice:
         case "1" | "no":
             print("Your welcome")
-
             break
         case "2" | "yes":
             print("Okay we need to generate a key")
