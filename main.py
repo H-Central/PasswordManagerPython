@@ -7,8 +7,8 @@ with open('data.json', 'r') as file:
 
 print("Welcome to your password manager.")
 print("It is your first time here ? (1 - no)(2 - yes)")
-choice = input(":")
 while True:
+    choice = input(":")
     match choice:
         case "1" | "no":
             print("Your welcome")

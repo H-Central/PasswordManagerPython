@@ -130,3 +130,6 @@ dmypy.json
 
 # ignore vs files
 .vs/*
+
+# ignore key
+*.key
