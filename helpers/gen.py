@@ -26,6 +26,11 @@ def pwd(n , low = True, hig = True, num = True, spe = True):
             s = randint(0,key-1)
             mdp += choice( alphabets[s] )
             
-    return mdp
+    print("And your password is:\n" + mdp)
 
-pwd()
+
+def genPSD():
+    print("What do you want for the longuest of the password:")
+    long = input()
+    long = int(long)
+    pwd(long)
