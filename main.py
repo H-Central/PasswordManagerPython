@@ -2,10 +2,6 @@ import json
 from helpers import manager, encode, gen
 from time import sleep
 
-def savePSW():
-    with open('data.json', 'w') as file:
-        json.dump(list, file)
-
 with open('data.json', 'r') as file:
     list = json.load(file)
 
@@ -32,12 +28,12 @@ while True:
         case "4":
             manager.delPSD()
         case "5":
-            savePSW()
+            manager.savePSW()
             print("See you later")
             sleep(2)
             break
         case other:
-            savePSW()
+            manager.savePSW()
             print("Not avable")
             sleep(2)
             continue
