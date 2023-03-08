@@ -1,20 +1,27 @@
 import json
+from DeltacodeProject.encodings2 import *
+from DeltacodeProject.Deltacode import Deltacode as menu
+# pip install DeltacodeProject
 from helpers import manager, encode, gen
 from time import sleep
+from os import system as cmd
+from os import name as osname
+
+default_password = "@pà$$£0rµ"
 
 with open('data.json', 'r') as file:
     list = json.load(file)
 
 while True:
-    print("What do you want to do")
-    print("1 - Generate a password")
-    print("2 - Add a password")
-    print("3 - See a password")
-    print("4 - Del a password")
-    print("5 - Exit")
-
-    choice = input()
-
+    cmd("clear" if osname == "posix" else "cls")
+    choice = input("What do you want to do\n" + menu().create_menu(2, [
+        "Generate a password",
+        "Add a password",
+        "See a password",
+        "Del a password",
+        '',
+        "Exit"
+    ]))
     match choice:
         case "1":
             gen.genPSD()
@@ -36,4 +43,3 @@ while True:
             manager.savePSW()
             print("Not avable")
             sleep(2)
-            continue
