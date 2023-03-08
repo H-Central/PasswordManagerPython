@@ -1,9 +1,10 @@
 from random import choice, randint
 from string import printable
 
-def pwd():
+def pwd(lenght: int = None):
     pwd = ''
-    lenght = randint(8, 20)
+    if not lenght:
+        lenght = randint(8, 20)
     for i in range(lenght):
         pwd += printable[randint(40, 80) % len(printable)]
     return pwd
