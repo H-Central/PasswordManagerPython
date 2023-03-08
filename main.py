@@ -5,6 +5,24 @@ from time import sleep
 with open('data.json', 'r') as file:
     list = json.load(file)
 
+print("Welcome to your password manager.")
+print("It is your first time here ? (1 - no)(2 - yes)")
+choice = input(":")
+while True:
+    match choice:
+        case "1" | "no":
+            print("Your welcome")
+
+            break
+        case "2" | "yes":
+            print("Okay we need to generate a key")
+            print('For this you need to save the file "key.key" in security')
+            encode.genKEY()
+            break
+        case other:
+            print(f"You can't set \"{choice}\"")
+            continue
+
 while True:
     print("What do you want to do")
     print("1 - Generate a password")
