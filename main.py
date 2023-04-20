@@ -15,6 +15,7 @@ else:
     print()
 
 while True:
+    print()
     print("What do you want to do")
     print("1 - Generate a password")
     print("2 - Add a password")
