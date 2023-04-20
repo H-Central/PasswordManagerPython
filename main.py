@@ -32,7 +32,7 @@ while True:
             manager.seePSW()
             sleep(2)
         case "4":
-            manager.delPSD()
+            manager.delPSW()
         case "5":
             manager.savePSW()
             print("See you later")

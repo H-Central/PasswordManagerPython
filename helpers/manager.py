@@ -15,12 +15,12 @@ def addPSW():
         list[site] = passwd
         savePSW()
 
+def delPSW():
+    pass
+
 def seePSW():
     see = input("What website or application you want to see the password\n")
     if list.get(see) == None:
         print("There are no password matching\n")
     else:
         print("Your password is:\n" + list.get(see))
-
-def selPSW():
-    pass
