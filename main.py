@@ -1,23 +1,15 @@
 from helpers import manager, encode, gen
 from time import sleep
+import os
 
 
 print("Welcome to your password manager.")
-print("It is your first time here ? (1 - no)(2 - yes)")
-while True:
-    choice = input(":")
-    match choice:
-        case "1" | "no":
-            print("Your welcome")
-            break
-        case "2" | "yes":
-            print("Okay we need to generate a key")
-            print('For this you need to save the file "key.key" in security')
-            encode.genKEY()
-            break
-        case other:
-            print(f"You can't set \"{choice}\"")
-            continue
+
+if os.path.exists(".key"):
+    print("Welcome to your password manager.")
+else:
+    print('you need to save the file ".key" in security')
+    encode.genKEY()
 
 while True:
     print("What do you want to do")

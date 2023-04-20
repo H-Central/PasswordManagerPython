@@ -3,12 +3,12 @@ import json
 
 def genKEY():
     key = Fernet.generate_key()
-    with open('key.key', 'wb') as key_file:
+    with open('.key', 'wb') as key_file:
         key_file.write(key)
     f = Fernet(key)
 
 def loadKEY():
-    with open('key.key', 'wb') as key_file:
+    with open('.key', 'wb') as key_file:
         key_file.write(key)
     f = Fernet(key)
 
