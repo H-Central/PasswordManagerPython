@@ -2,8 +2,6 @@ from helpers import manager, encode, gen
 from time import sleep
 import os
 
-liste = []
-
 if os.path.exists(".key"):
     # encode.decrypt()
     print("Welcome to your password manager.")
@@ -30,22 +28,22 @@ while True:
             gen.genPSD()
             sleep(2)
         case "2":
-            manager.addPSW(liste)
+            manager.addPSW()
             sleep(2)
         case "3":
-            manager.seePSW(liste)
+            manager.seePSW()
             sleep(2)
         case "4":
             manager.delPSW()
             sleep(2)
         case "5":
-            manager.savePSW(liste)
+            manager.savePSW()
             encode.crypter()
             print("See you later")
             sleep(2)
             break
         case other:
-            manager.savePSW(liste)
+            manager.savePSW()
             print("Not avable")
             sleep(2)
             continue
