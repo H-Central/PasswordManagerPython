@@ -1,11 +1,19 @@
-import json
 from helpers import manager, encode, gen
 from time import sleep
+import os
 
-with open('data.json', 'r') as file:
-    list = json.load(file)
+if os.path.exists(".key"):
+    # encode.decrypt()
+    print("Welcome to your password manager.")
+    print()
+else:
+    print('you need to save the file ".key" in security')
+    encode.genKEY()
+    print("Welcome to your password manager.")
+    print()
 
 while True:
+    print()
     print("What do you want to do")
     print("1 - Generate a password")
     print("2 - Add a password")
@@ -26,9 +34,11 @@ while True:
             manager.seePSW()
             sleep(2)
         case "4":
-            manager.delPSD()
+            manager.delPSW()
+            sleep(2)
         case "5":
             manager.savePSW()
+            encode.crypter()
             print("See you later")
             sleep(2)
             break

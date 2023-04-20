@@ -129,4 +129,7 @@ dmypy.json
 .pyre/
 
 # ignore vs files
-.vs/*
+.vs/
+
+# ignore key
+*.key
