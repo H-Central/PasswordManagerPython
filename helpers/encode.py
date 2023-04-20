@@ -9,8 +9,8 @@ def genKEY():
 
 def loadKEY():
     with open('.key', 'wb') as key_file:
-        key_file.write(key)
-    f = Fernet(key)
+        key_file.read(key)
+    f = Fernet(key_file)
 
 def crypter():
     loadKEY()
@@ -20,16 +20,16 @@ def crypter():
     json_string = json.dumps(data)
     encrypted = f.encrypt(json_string.encode())
 
-    with open('encrypted_file.json', 'wb') as file:
+    with open('data_crypt.json', 'wb') as file:
         file.write(encrypted)
 
 def decrypt():
     loadKEY()
-    with open('encrypted_file.json', 'rb') as file:
+    with open('data_crypt', 'rb') as file:
         encrypted_data = file.read()
     
     decrypted_data = f.decrypt(encrypted_data)
     decrypted_json = json.loads(decrypted_data)
 
-    with open('decrypted_file.json', 'w') as file:
+    with open('data_decrypt.json', 'w') as file:
         json.dump(decrypted_json, file)

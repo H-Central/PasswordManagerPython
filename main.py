@@ -3,6 +3,7 @@ from time import sleep
 import os
 
 if os.path.exists(".key"):
+    # encode.decrypt()
     print("Welcome to your password manager.")
     print()
 else:
@@ -12,6 +13,7 @@ else:
     print()
 
 while True:
+    print()
     print("What do you want to do")
     print("1 - Generate a password")
     print("2 - Add a password")
@@ -33,8 +35,10 @@ while True:
             sleep(2)
         case "4":
             manager.delPSW()
+            sleep(2)
         case "5":
             manager.savePSW()
+            encode.crypter()
             print("See you later")
             sleep(2)
             break

@@ -1,26 +1,29 @@
 import json
 
-def savePSW():
+def savePSW(a):
     with open('data.json', 'w') as file:
-        json.dump(list, file)
+        json.dump(a, file)
 
 def addPSW():
     with open('data.json', 'r') as file:
-        list = json.load(file)
+        pswl = json.load(file)
     site = input("What is your website or application ?\n")
-    if list.get(site) != None:
+    if pswl.get(site) != None:
         print("This website is already here.")
     else:
         passwd = input("What password do you want ?\n")
-        list[site] = passwd
-        savePSW()
+        pswl[site] = passwd
+        savePSW(a = pswl)
 
 def delPSW():
     pass
 
 def seePSW():
+    savePSW()
+    with open('data.json', 'r') as file:
+        pswl = json.load(file)
     see = input("What website or application you want to see the password\n")
-    if list.get(see) == None:
+    if pswl.get(see) == None:
         print("There are no password matching\n")
     else:
-        print("Your password is:\n" + list.get(see))
+        print("Your password is:\n" + pswl.get(see))
