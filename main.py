@@ -2,14 +2,14 @@ from helpers import manager, encode, gen
 from time import sleep
 import os
 
-
-print("Welcome to your password manager.")
-
 if os.path.exists(".key"):
     print("Welcome to your password manager.")
+    print()
 else:
     print('you need to save the file ".key" in security')
     encode.genKEY()
+    print("Welcome to your password manager.")
+    print()
 
 while True:
     print("What do you want to do")
